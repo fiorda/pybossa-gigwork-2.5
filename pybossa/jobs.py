@@ -194,7 +194,7 @@ def get_project_jobs(queue):
     if queue == 'super':
         projects = cached_projects.get_from_pro_user()
     elif queue == 'high':
-        projects = (p.dictize() for p in project_repo.filter_by(published=True)
+        projects = (p.dictize() for p in project_repo.filter_by()
                     if p.owner.pro is False)
     else:
         projects = []
