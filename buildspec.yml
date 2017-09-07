@@ -6,7 +6,7 @@ phases:
       - echo Install started on `date`
   pre_build:
     commands:
-      - echo Nothing to do in the pre_build phase...
+      - pip install virtualenv
   build:
     commands:
       - echo Build started on `date`
