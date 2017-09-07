@@ -12,7 +12,7 @@ phases:
       - echo Build started on `date`
       - git submodule update --init --recursive
       - virtualenv env
-      - source env/bin/activate
+      - . env/bin/activate
       - pip install -U pip
       - pip install -r requirements.txt
       - nosetests test/
