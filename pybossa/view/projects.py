@@ -1232,7 +1232,7 @@ def _update_task_redundancy(project_id, task_ids, n_answers):
                 t.n_answers = n_answers
                 t.state = 'ongoing'
                 if len(t.task_runs) >= n_answers:
-                    t.state = 'complete'
+                    t.state = 'completed'
                 task_repo.update(t)
 
 
