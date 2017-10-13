@@ -675,6 +675,8 @@ def import_tasks(project_id, current_user_fullname, from_auto=False, **form_data
     try:
         report = importer.create_tasks(task_repo, project, **form_data)
     except JobTimeoutException:
+        from pybossa.core import db
+        db.session.rollback()
         n_tasks = _num_tasks_imported(project_id)
         subject = 'Your import task has timed out'
         body = '\n'.join(
