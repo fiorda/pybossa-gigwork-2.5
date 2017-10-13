@@ -165,6 +165,7 @@ class Test(object):
         db.session.commit()
         db.session.add(user2)
         db.session.commit()
+        project.owners_ids = [user.id]
         db.session.add(project)
 
 
@@ -329,6 +330,7 @@ class Fixtures:
         db.session.commit()
         db.session.add(user2)
         db.session.commit()
+        project.owners_ids = [user.id]
         db.session.add(project)
 
 

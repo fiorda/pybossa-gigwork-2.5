@@ -638,6 +638,13 @@ def update_counters():
         db.session.commit()
 
 
+def migrate_coowners():
+    from pybossa.core import project_repo
+    projects = project_repo.get_all()
+    for project in projects:
+        coowners = [coown.id for coown in project.coowners]
+        print coowners
+
 ## ==================================================
 ## Misc stuff for setting up a command line interface
 

@@ -507,10 +507,8 @@ def setup_error_handlers(app):
                         description=UNAUTHORIZED)
         return handle_content_type(response)
 
-
-def is_coowner(project_id, user=current_user):
-    return any(project_id == co.project_id for co in user.coowned_projects)
-
+def is_coowner():
+    pass
 
 def setup_hooks(app):
     """Setup hooks."""
@@ -605,8 +603,7 @@ def setup_hooks(app):
             upload_method=app.config['UPLOAD_METHOD'],
             news=news,
             notify_admin=notify_admin,
-            plugins=plugins,
-            is_coowner=is_coowner)
+            plugins=plugins)
 
     @csrf.error_handler
     def csrf_error_handler(reason):
