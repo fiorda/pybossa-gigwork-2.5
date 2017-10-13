@@ -507,8 +507,6 @@ def setup_error_handlers(app):
                         description=UNAUTHORIZED)
         return handle_content_type(response)
 
-def is_coowner():
-    pass
 
 def setup_hooks(app):
     """Setup hooks."""
