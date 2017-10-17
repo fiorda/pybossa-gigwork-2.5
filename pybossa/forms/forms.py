@@ -246,7 +246,8 @@ class BulkTaskLocalCSVImportForm(Form):
                 s3_url = s3_upload_file_storage(
                             current_app.config.get("S3_IMPORT_BUCKET"),
                             csv_file,
-                            directory=path)
+                            directory=path,
+                            check_type=False)
                 return {'type': 'localCSV', 'csv_filename': s3_url}
         return {'type': 'localCSV', 'csv_filename': None}
 
